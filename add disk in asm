@@ -1,0 +1,14 @@
+oracleasm listdisks
+
+oracleasm createdisk PRREBCDB19 /dev/mapper/PRREBCDB19p1
+oracleasm createdisk PRREBCDB20 /dev/mapper/PRREBCDB20p1
+oracleasm createdisk PRREBCDB21 /dev/mapper/PRREBCDB21p1
+oracleasm createdisk PRREBCDB22 /dev/mapper/PRREBCDB22p1
+oracleasm createdisk PRREBCDB23 /dev/mapper/PRREBCDB23p1
+
+alter diskgroup DATA_PRREBCDB add disk '/dev/oracleasm/disks/PRREBCDB20',
+'/dev/oracleasm/disks/PRREBCDB21',
+'/dev/oracleasm/disks/PRREBCDB22',
+'/dev/oracleasm/disks/PRREBCDB23' rebalance power 8;
+
+ ALTER DISKGROUP DATA ADD DISK '/dev/mapper/asm-ndisk55_N'  REBALANCE POWER 11;
